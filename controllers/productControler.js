@@ -98,7 +98,7 @@ export function getProductByID(req,res){
                 })
             }
             else{
-                res.json(product)
+                res.json(product)//git change
             }
         }
     ).catch(
