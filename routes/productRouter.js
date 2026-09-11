@@ -11,7 +11,7 @@ productRouter.get("/trending",(req,res)=>{
             message:"trending products endpoint"
         }
     )
-})
+})//product router
 
 productRouter.post("/",createProduct)
 
