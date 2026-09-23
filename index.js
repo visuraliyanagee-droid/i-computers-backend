@@ -4,13 +4,21 @@ import dns from "node:dns";
 import userRouter from "./routes/userRouter.js";
 import jwt from "jsonwebtoken";
 import productRouter from "./routes/productRouter.js";
+import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config()
 dns.setServers(["1.1.1.1","8.8.8.8"])
 
 
 
 const app = express()//app eka ATHULE SAMPOORNA EXPRESS EKA THIYENWA
 
+app.use(
+    cors()
+)
+
 app.use(express.json())//middleman
+
 
 
 app.use(
@@ -48,17 +56,17 @@ app.use(
         }
         
         
-
+dotenv
 
 })
 
-app.use("/users",userRouter)
-app.use("/products",productRouter)
+app.use("/api/users",userRouter)
+app.use("/api/products",productRouter)
 
 
 //y6tDhJE39JtKfwzB
 //visuraliyanage1997asm_db_user 
-const mongoURL = "mongodb+srv://visuraliyanage1997asm_db_user:y6tDhJE39JtKfwzB@cluster0.fguwf8m.mongodb.net/?appName=Cluster0"
+const mongoURL = process.env.MONGO_URL
 
 mongoose.connect(mongoURL).then(
     ()=>{
