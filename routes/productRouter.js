@@ -11,7 +11,7 @@ productRouter.get("/trending",(req,res)=>{
             message:"trending products endpoint"
         }
     )
-})//git check
+})//git chec
 
 productRouter.post("/",createProduct)
 
