@@ -32,7 +32,7 @@ app.use(
 
         console.log(token)
 
-        jwt.verify(token,"secretkey96$2025",
+        jwt.verify(token,"process.env.JWT_SECRET",
 
             (error,content)=>{
 
@@ -56,7 +56,7 @@ app.use(
         }
         
         
-dotenv
+
 
 })
 
