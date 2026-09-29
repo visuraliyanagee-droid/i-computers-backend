@@ -59,8 +59,8 @@ export function loginUser(req,res){
 
          };
 
-        const token = jwt.sign(payload,"secretkey96$2025",{
-            expiresIn: "100h"
+        const token = jwt.sign(payload,"secretkey96",{
+            expiresIn: "1000h"
         })
 
         res.json({

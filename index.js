@@ -30,16 +30,18 @@ app.use(
             const token = header.replace("Bearer ","")
         
 
-        console.log(token)
+        //console.log(token)
 
-        jwt.verify(token,"process.env.JWT_SECRET",
+        jwt.verify(token,process.env.JWT_SECRET,
 
             (error,content)=>{
 
                 if(content == null){
                     console.log("invalid token")
+                    console.log("JWT Error:", error)
+                    console.log("SECRET on verify:", process.env.JWT_SECRET)
 
-                    res.json({
+                    res.status(401).json({
                         message:"invalid token"
                     })
                     

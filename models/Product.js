@@ -41,7 +41,7 @@ const productSchema = new mongoose.Schema(
     },
     brand:{
         type:String,
-        default: "no brand"
+        default: "Generic"
     },
     stock:{
         type: Number,
@@ -51,6 +51,12 @@ const productSchema = new mongoose.Schema(
     isAvailable:{
         type:Boolean,
         default: true
+
+    },
+    modelNumber:{
+        type:String,
+        required:true,
+        default:"standard"
 
     }
 }
